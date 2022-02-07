@@ -5,7 +5,7 @@
 <h1>Create new post</h1>
 <br><br><br>
 
-    <form action="{{ route('store', Auth::user() -> name) }}" method="POST">
+    <form action="{{ route('store') }}" method="POST">
 
         @method("POST")
         @csrf
