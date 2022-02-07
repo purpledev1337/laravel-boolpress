@@ -17,8 +17,18 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        width: 60%;
         min-width: 800px;
+        margin: 0 auto;
         padding: 50px;
+        background-color: steelblue;
+        border-radius: 30px;
+
+        a {
+
+            text-decoration: none;
+            color: white;
+        }
     }
     
     #posts_link {
@@ -46,9 +56,7 @@ body {
             .post_title {
 
                 display: inline-block;
-                // border-radius: 30px;
                 color: rgb(35, 67, 211);
-                // background-color: rgba(128, 128, 128, 0.2);
                 padding: 25px;
                 text-transform: uppercase;
             }

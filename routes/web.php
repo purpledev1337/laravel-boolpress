@@ -22,8 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'GuestController@home')->name('home');
 Route::get('/posts', 'GuestController@posts')->name('posts');
 
-Route::get('/post/create', 'GuestController@create') -> name('create');
-Route::post('/post/store', 'GuestController@store') -> name('store');
+Route::get('/post/create', 'HomeController@create') -> name('create');
+Route::post('/post/store', 'HomeController@store') -> name('store');
 
 Route::post('/register', 'Auth\RegisterController@register') -> name('register');
 Route::post('/login', 'Auth\LoginController@login') -> name('login');
