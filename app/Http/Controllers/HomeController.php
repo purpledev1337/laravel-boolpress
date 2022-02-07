@@ -32,10 +32,10 @@ class HomeController extends Controller
 
         $data = $request -> validate([
             'title' => 'required|string|max:60',
-            'subtitle' => 'nullable|string|max:30',
+            'subtitle' => 'nullable|string|max:120',
             'text' => 'required|max:350'
         ]);
-        $data['author'] = Auth::user() -> name;
+        $data['user_id'] = Auth::user() -> id;
 
         $post = Post::create($data);
 
