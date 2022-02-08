@@ -12,6 +12,12 @@
 
         <label for="title">Title:</label><br>
         <textarea id="title" cols="60" rows="1" name="title" placeholder="Insert title"></textarea><br>
+        <label for="cat_id">Choose a cat:</label>
+        <select name="cat_id" id="cat_id">
+            @foreach ($cats as $cat)
+                <option value="{{ $cat -> id }}">{{ $cat -> name }}</option>
+            @endforeach
+        </select>
         <label for="subtitle">Subtitle:</label><br>
         <textarea id="subtitle" cols="40" rows="2" name="subtitle" placeholder="Insert subtitle"></textarea><br>
         <label for="text">Text:</label><br>

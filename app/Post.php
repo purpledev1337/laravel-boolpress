@@ -8,14 +8,19 @@ class Post extends Model
 {
     protected $fillable = [
         'title',
-        // 'author',
         'subtitle',
         'text',
-        'user_id'
+        'user_id',
+        'cat_id'
     ];
 
     public function user() {
 
         return $this->belongsTo(User::class);
+    }
+
+    public function cat() {
+
+        return $this->belongsTo(Cat::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Cat;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -25,7 +26,9 @@ class HomeController extends Controller
      */
     public function create() {
 
-        return view('pages.create');
+        $cats = Cat::all();
+
+        return view('pages.create', compact('cats'));
     }
 
     public function store(Request $request) {
@@ -33,9 +36,11 @@ class HomeController extends Controller
         $data = $request -> validate([
             'title' => 'required|string|max:60',
             'subtitle' => 'nullable|string|max:120',
-            'text' => 'required|max:350'
+            'text' => 'required|max:350',
+            'cat_id' => 'required|numeric'
         ]);
         $data['user_id'] = Auth::user() -> id;
+        // $data['cat_id'] = $id;
 
         $post = Post::create($data);
 

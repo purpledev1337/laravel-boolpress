@@ -24,8 +24,8 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        width: 50%;
-        min-width: 1000px;
+        width: 60%;
+        min-width: 1200px;
         margin: 0 auto;
         padding: 50px;
         background-color: steelblue;
@@ -50,16 +50,15 @@ body {
         position: relative;
         margin: 0 auto;
         width: 60%;
-        min-width: 1000px;
         
         .post_box {
             
-            background-color: rgba(255, 255, 0, 0.4);
+            width: 100%;
             border-radius: 50px;
             display: inline-block;
-            min-width: 1000px;
             margin: 15px 0;
             padding-bottom: 5px;
+            position: relative;
 
             .post_title {
 
@@ -71,7 +70,7 @@ body {
 
             .post_subtitle {
 
-                color: grey;
+                color: white;
             }
 
             .post_author {
@@ -83,17 +82,62 @@ body {
             
             .post_text {
 
+                width: 80%;
+                margin: 0 auto;
                 padding: 20px;
             }
 
             .post_date {
 
-                width: 80%;
+                width: 60%;
                 margin: 0 auto;
                 color: blue;
-                background-color: yellowgreen;
+                background-color: rgba(125, 125, 125, 0.5);
                 border-radius: 20px;
                 padding: 5px 0;
+            }
+
+            .post_cat {
+
+                // width: 100%;
+                // text-align: center;
+                position: absolute;
+                text-transform: uppercase;
+                font-size: 2.5em;
+                // top: 50%;
+                left: 0;
+                transform: rotate(-90deg);
+                width: 180px;
+            }
+
+            &.general {
+
+                background-color: rgba(255, 255, 0, 0.4);
+            }
+
+            &.politics {
+
+                background-color: rgba(25, 0, 255, 0.4);
+            }
+
+            &.sports {
+
+                background-color: rgba(174, 0, 255, 0.4);
+            }
+
+            &.gaming {
+
+                background-color: rgba(255, 153, 0, 0.4);
+            }
+
+            &.tech {
+
+                background-color: rgba(123, 255, 0, 0.4);
+            }
+
+            &.economy {
+
+                background-color: rgba(0, 255, 242, 0.4);
             }
         }
 

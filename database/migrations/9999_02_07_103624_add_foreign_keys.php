@@ -18,6 +18,9 @@ class AddForeignKeys extends Migration
             $table -> foreign('user_id', 'posts_user')
                    -> references('id')
                    -> on('users');
+            $table -> foreign('cat_id', 'posts_cat')
+                   -> references('id')
+                   -> on('cats');
         });
     }
 
@@ -30,7 +33,8 @@ class AddForeignKeys extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
 
-            $table->dropForeign('posts_user');
+            $table->dropForeign('posts_user', 'posts_cat');
+            // $table->dropForeign('posts_cat');
         });
 
     }
