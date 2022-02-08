@@ -11013,7 +11013,7 @@ body #post_area .post_box {
 
 body #post_area .post_box .post_title {
   display: inline-block;
-  color: #2343d3;
+  color: black;
   padding: 25px;
   text-transform: uppercase;
 }
@@ -11035,12 +11035,12 @@ body #post_area .post_box .post_text {
 }
 
 body #post_area .post_box .post_date {
-  width: 60%;
+  display: inline-block;
   margin: 0 auto;
   color: blue;
-  background-color: rgba(125, 125, 125, 0.5);
+  background-color: white;
   border-radius: 20px;
-  padding: 5px 0;
+  padding: 5px;
 }
 
 body #post_area .post_box .post_cat {
@@ -11073,7 +11073,7 @@ body #post_area .post_box.tech {
 }
 
 body #post_area .post_box.economy {
-  background-color: rgba(0, 255, 242, 0.4);
+  background-color: rgba(0, 153, 255, 0.4);
 }
 
 body #post_area #create_post {

@@ -34,7 +34,6 @@ class AddForeignKeys extends Migration
         Schema::table('posts', function (Blueprint $table) {
 
             $table->dropForeign('posts_user', 'posts_cat');
-            // $table->dropForeign('posts_cat');
         });
 
     }

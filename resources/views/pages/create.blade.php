@@ -12,8 +12,8 @@
 
         <label for="title">Title:</label><br>
         <textarea id="title" cols="60" rows="1" name="title" placeholder="Insert title"></textarea><br>
-        <label for="cat_id">Choose a cat:</label>
-        <select name="cat_id" id="cat_id">
+        <label for="cat">Choose a cat:</label>
+        <select name="cat" id="cat">
             @foreach ($cats as $cat)
                 <option value="{{ $cat -> id }}">{{ $cat -> name }}</option>
             @endforeach

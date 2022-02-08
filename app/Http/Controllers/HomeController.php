@@ -36,13 +36,15 @@ class HomeController extends Controller
         $data = $request -> validate([
             'title' => 'required|string|max:60',
             'subtitle' => 'nullable|string|max:120',
-            'text' => 'required|max:350',
-            'cat_id' => 'required|numeric'
+            'text' => 'required|max:350'
         ]);
         $data['user_id'] = Auth::user() -> id;
-        // $data['cat_id'] = $id;
 
-        $post = Post::create($data);
+        $post = Post::make($data);
+        $category = Cat::findOrFail($request -> get('cat'));
+
+        $post -> cat() -> associate($category);
+        $post -> save();
 
         return redirect() -> route('posts');
     }

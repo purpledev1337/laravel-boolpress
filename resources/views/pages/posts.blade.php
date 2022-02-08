@@ -6,13 +6,13 @@
     
     <ul>
         @foreach ($posts as $post)
-        <div class="
-        @if($post -> cat -> name == 'general') post_box general
-        @elseif($post -> cat -> name == 'sports') post_box sports
-        @elseif($post -> cat -> name == 'politics') post_box politics
-        @elseif($post -> cat -> name == 'tech') post_box tech
-        @elseif($post -> cat -> name == 'gaming') post_box gaming
-        @elseif($post -> cat -> name == 'economy') post_box economy
+        <div class=" post_box
+        @if($post -> cat -> name == 'general') general
+        @elseif($post -> cat -> name == 'sports') sports
+        @elseif($post -> cat -> name == 'politics') politics
+        @elseif($post -> cat -> name == 'tech') tech
+        @elseif($post -> cat -> name == 'gaming') gaming
+        @elseif($post -> cat -> name == 'economy') economy
         @endif">
         <h1 class="post_title">{{ $post -> title }}</h1>
         <h4 class="post_subtitle">{{ $post -> subtitle }}</h4>
