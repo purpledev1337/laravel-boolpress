@@ -22,6 +22,15 @@ class AddForeignKeys extends Migration
                    -> references('id')
                    -> on('cats');
         });
+
+        Schema::table('post_reaction', function (Blueprint $table) {
+            $table -> foreign('post_id', 'post_reaction')
+                   -> references('id')
+                   -> on('posts');
+            $table -> foreign('reaction_id', 'reaction_post')
+                   -> references('id')
+                   -> on('reactions');
+        });
     }
 
     /**
@@ -36,5 +45,9 @@ class AddForeignKeys extends Migration
             $table->dropForeign('posts_user', 'posts_cat');
         });
 
+        Schema::table('post_reaction', function (Blueprint $table) {
+            $table -> dropForeign('post_reaction');
+            $table -> dropForeign('reaction_post');
+        });
     }
 }

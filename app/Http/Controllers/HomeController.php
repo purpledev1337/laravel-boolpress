@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Cat;
+use App\Reaction;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -27,8 +28,9 @@ class HomeController extends Controller
     public function create() {
 
         $cats = Cat::all();
+        $reactions = Reaction::all();
 
-        return view('pages.create', compact('cats'));
+        return view('pages.create', compact('cats', 'reactions'));
     }
 
     public function store(Request $request) {
@@ -38,12 +40,17 @@ class HomeController extends Controller
             'subtitle' => 'nullable|string|max:120',
             'text' => 'required|max:350'
         ]);
+
         $data['user_id'] = Auth::user() -> id;
 
         $post = Post::make($data);
         $category = Cat::findOrFail($request -> get('cat'));
 
         $post -> cat() -> associate($category);
+        $post -> save();
+
+        $reactions = Reaction::findOrFail($request -> get('reactions'));
+        $post -> reactions() -> attach($reactions);
         $post -> save();
 
         return redirect() -> route('posts');
