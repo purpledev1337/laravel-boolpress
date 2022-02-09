@@ -49,8 +49,11 @@ class HomeController extends Controller
         $post -> cat() -> associate($category);
         $post -> save();
 
-        $reactions = Reaction::findOrFail($request -> get('reactions'));
-        $post -> reactions() -> attach($reactions);
+        if (array_key_exists('reactions', $data)) {
+            $reactions = Reaction::findOrFail($request -> get('reactions'));
+            $post -> reactions() -> attach($reactions);
+        }
+        
         $post -> save();
 
         return redirect() -> route('posts');
