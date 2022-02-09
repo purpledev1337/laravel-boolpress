@@ -19,6 +19,8 @@
             <span class="post_cat">{{ $post -> cat -> name }}</span>
             by <span class="post_author">{{ $post -> user -> name }}</span>
             <p class="post_text">{{ $post -> text }}</p>
+            <a href="{{ route('edit', $post -> id) }}">EDIT POST</a><br>
+            <a href="{{ route('delete', $post -> id) }}">DELETE</a>
             <div class="post_reactions"> Reactions:
                 @foreach ($post -> reactions as $reaction)
                     <span class="post_reaction">
